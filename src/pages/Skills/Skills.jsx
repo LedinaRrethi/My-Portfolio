@@ -1,31 +1,23 @@
 import React from 'react';
-import '../../style/style.css';
+import SkillItem from '../../components/SkillItem/SkillItem';
 
 const Skills = () => {
+  const skills = [
+    { iconClass: 'bx bxl-html5', skillName: 'HTML' },
+    { iconClass: 'bx bxl-css3', skillName: 'CSS' },
+    { iconClass: 'bx bxl-javascript', skillName: 'JavaScript' },
+    { iconClass: 'bx bxl-java', skillName: 'Java' },
+  ];
+
   return (
-    <div>
-      <section className="skills" id="skills">
-        <h2 className="section-title">My Skills</h2>
-        <div className="skills-content">
-          <div className="skill">
-            <i className="bx bxl-html5" />
-            <span>HTML</span>
-          </div>
-          <div className="skill">
-            <i className="bx bxl-css3" />
-            <span>CSS</span>
-          </div>
-          <div className="skill">
-            <i className="bx bxl-javascript" />
-            <span>JavaScript</span>
-          </div>
-          <div className="skill">
-            <i className="bx bxl-java" />
-            <span>Java</span>
-          </div>
-        </div>
-      </section>
-    </div>
+    <section className="skills" id="skills">
+      <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>My Skills</h2>
+      <div className="skills-content">
+        {skills.map((skill, index) => (
+          <SkillItem key={index} iconClass={skill.iconClass} skillName={skill.skillName} />
+        ))}
+      </div>
+    </section>
   );
 };
 

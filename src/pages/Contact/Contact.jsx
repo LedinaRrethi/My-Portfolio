@@ -1,34 +1,21 @@
 import React from 'react';
-import '../../style/style.css';
+import InputBox from '../../components/InputBox/InputBox';
+import Button from '../../components/Button/Button';
 
 const Contact = () => {
   return (
-    <div>
-      <section className="contact" id="contact">
-        <h2 className="section-title">Contact Me</h2>
-        <form className="contact-form" method="post">
-          <div className="input-box">
-            <input type="text" required="required" />
-            <label>Name</label>
-          </div>
-          <div className="input-box">
-            <input type="email" required="required" />
-            <label>Email</label>
-          </div>
-          <div className="input-box">
-            <input id="subject" type="text" required="required" />
-            <label>Subject</label>
-          </div>
-          <div className="input-box">
-            <textarea required="required" defaultValue={''} />
-            <label>Message</label>
-          </div>
-          <div className="btn-submit">
-            <button type="submit">Send Message</button>
-          </div>
-        </form>
-      </section>
-    </div>
+    <section className="contact" id="contact">
+      <h2 style={{ textAlign: 'center', marginBottom: '50px' }}>Contact Me</h2>
+      <form className="contact-form">
+        <InputBox type="text" label="Name" />
+        <InputBox type="email" label="Email" />
+        <InputBox type="text" label="Subject" />
+        <InputBox type="textarea" label="Message" />
+        <div className="btn-submit" style={{ marginTop: '50px' }}>
+          <Button label="Send Message" type="submit" />
+        </div>
+      </form>
+    </section>
   );
 };
 

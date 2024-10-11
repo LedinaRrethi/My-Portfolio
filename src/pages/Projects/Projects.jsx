@@ -1,66 +1,32 @@
 import React from 'react';
-import '../../style/style.css';
-import project from '../../images/project1.jpg';
+import ProjectItem from '../../components/ProjectItem/ProjectItem';
+import projectImage from '../../images/project1.jpg';
 
 const Projects = () => {
+  const projects = [
+    { title: 'Blog', description: 'Lorem ipsum dolor sit amet.', imgSrc: projectImage, demoLink: '#' },
+    { title: 'Blog', description: 'Lorem ipsum dolor sit amet.', imgSrc: projectImage, demoLink: '#' },
+    { title: 'Blog', description: 'Lorem ipsum dolor sit amet.', imgSrc: projectImage, demoLink: '#' },
+    { title: 'Blog', description: 'Lorem ipsum dolor sit amet.', imgSrc: projectImage, demoLink: '#' },
+    { title: 'Blog', description: 'Lorem ipsum dolor sit amet.', imgSrc: projectImage, demoLink: '#' },
+    { title: 'Blog', description: 'Lorem ipsum dolor sit amet.', imgSrc: projectImage, demoLink: '#' },
+  ];
+
   return (
-    <div>
-      <section className="section" id="projects">
-        <div className="top-header">
-          <h1>Projects</h1>
-        </div>
-        <div className="project-container">
-          <div className="project-box">
-            <img src={project} alt="Project 1" />
-            <h3>Blog</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <a href="#" target="_blank">
-              View Demo
-            </a>
-          </div>
-          <div className="project-box">
-            <img src={project} alt="Project 1" />
-            <h3>Blog</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <a href="#" target="_blank">
-              View Demo
-            </a>
-          </div>
-          <div className="project-box">
-            <img src={project} alt="Project 1" />
-            <h3>Blog</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <a href="#" target="_blank">
-              View Demo
-            </a>
-          </div>
-          <div className="project-box">
-            <img src={project} alt="Project 1" />
-            <h3>Blog</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <a href="#" target="_blank">
-              View Demo
-            </a>
-          </div>
-          <div className="project-box">
-            <img src={project} alt="Project 1" />
-            <h3>Blog</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <a href="#" target="_blank">
-              View Demo
-            </a>
-          </div>
-          <div className="project-box">
-            <img src={project} alt="Project 1" />
-            <h3>Blog</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <a href="#" target="_blank">
-              View Demo
-            </a>
-          </div>
-        </div>
-      </section>
-    </div>
+    <section className="projects" id="projects">
+      <h2 style={{ textAlign: 'center', padding: '40px', marginTop: '50px' }}>Projects</h2>
+      <div className="project-container">
+        {projects.map((project, index) => (
+          <ProjectItem
+            key={index}
+            imgSrc={project.imgSrc}
+            title={project.title}
+            description={project.description}
+            demoLink={project.demoLink}
+          />
+        ))}
+      </div>
+    </section>
   );
 };
 
