@@ -6,14 +6,6 @@ import '../../style/style.css';
 import Button from '../../components/Button/Button';
 
 const Hero = () => {
-  const handleViewWorkClick = () => {
-    // Scroll to the projects section (or you can use window.location.hash = '#projects')
-    const projectsSection = document.querySelector('#projects');
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section className="featured-box" id="home">
       <div className="featured-text">

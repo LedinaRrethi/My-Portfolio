@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../style/style.css';
 import Button from '../Button/Button';
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <nav id="header">
+      <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"></link>
       <div className="nav-logo">
         <p>&lt;Ledina/&gt;</p>
       </div>
-      <div className="nav-menu" id="myNavMenu">
+      <div className={`nav-menu ${isMenuOpen ? 'responsive' : ''}`} id="myNavMenu">
         <ul className="nav_menu_list">
           <li className="nav_list">
             <a href="#home" className="nav-link active-link">
@@ -36,7 +42,7 @@ const Header = () => {
         </ul>
       </div>
       <div className="nav-menu-btn">
-        <i className="uil uil-bars" onclick="myMenuFunction()" />
+        <i className="uil uil-bars" onClick={toggleMenu} />
       </div>
     </nav>
   );

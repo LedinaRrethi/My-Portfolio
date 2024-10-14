@@ -605,3 +605,10 @@ footer {
     width: 100%;
   }
 }
+
+.error-message {
+  color: red; /* Text color for the error message */
+  font-size: 12px; /* Font size for readability */
+  margin-top: 5px; /* Space between the input and the error message */
+  display: block; /* Makes sure error messages occupy a whole line */
+}

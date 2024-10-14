@@ -1,0 +1,11 @@
+.input-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  position: absolute;
+  bottom: -18px;
+}

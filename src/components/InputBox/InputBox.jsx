@@ -1,10 +1,11 @@
 import React from 'react';
 
-const InputBox = ({ type, label, required = true }) => {
+const InputBox = ({ type, label, name, value, onChange, error, required = true }) => {
   return (
     <div className="input-box">
-      <input type={type} required={required} />
+      <input type={type} name={name} value={value} onChange={onChange} required={required} />
       <label>{label}</label>
+      {error && <span style={{ color: 'red', fontSize: '12px' }}>{error}</span>}
     </div>
   );
 };
