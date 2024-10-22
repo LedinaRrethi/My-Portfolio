@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ScrollButton = ({ href, label }) => {
   return (
@@ -9,6 +10,11 @@ const ScrollButton = ({ href, label }) => {
       </a>
     </div>
   );
+};
+
+ScrollButton.propTypes = {
+  href: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
 };
 
 export default ScrollButton;

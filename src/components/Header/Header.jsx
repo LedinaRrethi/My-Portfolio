@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../../style/style.css';
 import Button from '../Button/Button';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,28 +18,29 @@ const Header = () => {
       <div className={`nav-menu ${isMenuOpen ? 'responsive' : ''}`} id="myNavMenu">
         <ul className="nav_menu_list">
           <li className="nav_list">
-            <a href="#home" className="nav-link active-link">
+            <Link to={'/'} className="nav-link active-link">
               Home
-            </a>
+            </Link>
           </li>
           <li className="nav_list">
-            <a href="#about" className="nav-link">
+            <Link to={'/About'} className="nav-link">
               About
-            </a>
+            </Link>
           </li>
           <li className="nav_list">
-            <a href="#projects" className="nav-link">
+            <Link to={'/Projects'} className="nav-link">
               Projects
-            </a>
+            </Link>
           </li>
           <li className="nav_list">
-            <a href="#skills" className="nav-link">
+            <Link to={'/Skills'} className="nav-link">
               Skills
-            </a>
+            </Link>
           </li>
-          <li className="nav_list">
-            <Button label="Contact" href="#contact" />
-          </li>
+
+          <Link to="/Contact" className="nav-link">
+            <Button label="Contact">Contact</Button>
+          </Link>
         </ul>
       </div>
       <div className="nav-menu-btn">

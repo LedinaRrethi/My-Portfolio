@@ -14,4 +14,12 @@ const ProjectItem = ({ imgSrc, title, description, demoLink, onClick }) => {
   );
 };
 
+ProjectItem.propTypes = {
+  imgSrc: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  demoLink: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+};
+
 export default ProjectItem;

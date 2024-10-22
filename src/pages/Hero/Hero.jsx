@@ -4,6 +4,7 @@ import ScrollButton from '../../components/ScrollButton/ScrollButton';
 import avatar from '../../images/avatar.jpg';
 import '../../style/style.css';
 import Button from '../../components/Button/Button';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -21,9 +22,13 @@ const Hero = () => {
             My guiding principle: <br />
             <span style={{ fontWeight: 'bold', color: 'orangered' }}>"Thinking outside the Box is the Key!" </span>
           </p>
-          <Button label="View My Work" href="#projects" />
+          <Link to="/Projects">
+            <Button label="View My Work" />
+          </Link>
         </div>
-        <ScrollButton href="#about" label="Scroll Down" />
+        <Link to="/About">
+          <ScrollButton label="Scroll Down" />
+        </Link>
       </div>
       <div className="featured-image">
         <div className="image">

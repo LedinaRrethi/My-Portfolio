@@ -7,20 +7,35 @@ import Skills from './pages/Skills/Skills';
 import Contact from './pages/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import './style/style.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ErrorBoundery from './components/ErrorBoundery';
 
 const App = () => {
   return (
-    <div className="container">
+    <BrowserRouter basename="portfolio">
       <Header />
-      <main className="wrapper">
-        <Hero />
-        <About />
-        <Projects />
-        <Skills />
-        <Contact />
-      </main>
+      <Routes>
+        <Route ErrorBoundary={<ErrorBoundery />} path="/" element={<Hero />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Projects" element={<Projects />} />
+        <Route path="/Skills" element={<Skills />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="*" ErrorBoundary={ErrorBoundery} />
+      </Routes>
       <Footer />
-    </div>
+    </BrowserRouter>
+
+    // <div className="container">
+    //   <Header />
+    //   <main className="wrapper">
+    //     <Hero />
+    //     <About />
+    //     <Projects />
+    //     <Skills />
+    //     <Contact />
+    //   </main>
+    //   <Footer />
+    // </div>
   );
 };
 
